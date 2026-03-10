@@ -16,7 +16,7 @@ export default class CardItem {
     this.page = page;
   }
 
-  async getCardName(): Promise<string | null> {
+  public async getCardName(): Promise<string | null> {
     return await this.element.locator(this.SELECTORS.ITEM_NAME).textContent();
   }
 

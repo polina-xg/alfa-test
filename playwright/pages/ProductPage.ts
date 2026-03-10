@@ -23,7 +23,7 @@ export default class ProductPage extends BasePage {
     await input.fill(String(quantity));
   }
 
-  async addToCart() {
+  public async addToCart() {
     const quantity = this.page.locator('#cart').locator('.quantity');
     const oldValue = await quantity.textContent();
 

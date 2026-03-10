@@ -16,15 +16,15 @@ export default class Sidebar {
     this.loginForm = new LoginForm(page, this.root);
   }
 
-  async login(user: User): Promise<void> {
+  public async login(user: User): Promise<void> {
     await this.loginForm.login(user);
   }
 
-  async openLink(): Promise<void> {
+  public async openLink(): Promise<void> {
     await this.loginForm.openApplication();
   }
 
-  async checkViewedProducts(products: string[]) {
+  public async checkViewedProducts(products: string[]) {
     await this.recentlyViewed.expectProducts(products);
   }
 }

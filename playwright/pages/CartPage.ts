@@ -25,7 +25,7 @@ export default class CartPage extends BasePage {
     this.cartTable = new CartTable(page);
   }
 
-  async openCart() {
+  public async openCart() {
     await this.page
       .locator(this.SELECTORS.CART)
       .locator(this.SELECTORS.CART_LINK)

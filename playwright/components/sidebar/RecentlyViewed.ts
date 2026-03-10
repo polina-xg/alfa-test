@@ -7,7 +7,7 @@ export default class RecentlyViewed {
     this.page = page;
   }
 
-  async getViewedProducts(): Promise<string[]> {
+  public async getViewedProducts(): Promise<string[]> {
     const links = this.page.locator('.list-horizontal a');
     const hrefs = await links.evaluateAll(el =>
       el.map(a => a.getAttribute('href') ?? ''),
@@ -20,7 +20,7 @@ export default class RecentlyViewed {
     return name.toLowerCase().replace(/\s+/g, '-');
   }
 
-  async expectProducts(products: string[]) {
+  public async expectProducts(products: string[]) {
     const links = this.page.locator('.list-horizontal a');
     const hrefs = await links.evaluateAll(el =>
       el.map(a => a.getAttribute('href') ?? ''),
